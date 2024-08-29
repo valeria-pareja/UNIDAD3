@@ -29,7 +29,7 @@ console.log(number3);*/
 //console.log(numeros);
 
 //let edades=[11,20,8,13,5,10];
-//let rango = edades.slice(2,4);
+//let rango = edades.slice(2,4); //(-2,-1)
 //console.log(rango);
 //console.log(redades);
 
@@ -37,9 +37,9 @@ console.log(number3);*/
 //edades.splice(4,2,15,20);
 //console.log(edades);
 
-let array1=[2,4,6,8];
+/*let array1=[2,4,6,8];
 let array2=[3,5,7,9];
 let array3=[5,10,15,20];
 
 let array_concat=array1.concat(array2,array3);
-console.log(array_concat)
+console.log(array_concat)*/
