@@ -1,45 +1,66 @@
-/*let number = [1,2,3,4];
-number.push(5); //devuelve la longitud
-console.log(number);*/
+const autos = ["audi","bmw","ferrari","fiat","ford","lexus"]; //crear array
 
-//método pop
-/*let number2 = [2,4,6,8,3,7,6];
-number2.pop(); //no necesita parametro sale todomenos el 6
-console.log(number2);*/
+let text="";
+for(let i=0;i<autos.length; i++) {
+    text += '<img src="assets/img/'+autos[i]+ '.png" width="100"></img>';
+}
 
-/*let number2 = [2,4,6,8,3,7,6];
-console.log(number2.pop()); //
-console.log(number2);*/
+document.getElementById("demo").innerHTML=text; //va al html y busca demo y luego innerhtml introduzca texto
 
-/*let number3 = ['b','c','s']
-number3.unshift('z');
-console.log(number3);
-number3.shift();
-console.log(number3);*/
+let b1 = document.getElementById("btn.push"); //boton que contenga todo el boton push
+b1.onclick = functionPush; //le anexa un evento onclick y al hacer click llame a la funcion
 
-//let numeros = [2,5,7];
-//numeros.push (4);
-//numeros.pop(); //elimina el ultimo 4
-//numeros.shift(); //elimina el inicio
-//numeros.unshift(1); //añade al inicio
-//console.log(numeros); // 1,5,7
+function functionPush(elemento){
+    autos.push("saab"); //agrega elemento, en el original ya esta al final const autos
+    let text= ""; //para anexar imagen
+    for (let i = 0; i < autos.length; i++) { //recorre nueva longitud y agrega la ultima imagen
+        text += '<img src="assets/img/'+autos[i]+ '.png" width="100"></img>'; //otro recorrido paar agregar la nueva imagen
+    }
+    document.getElementById("demo").innerHTML=text; //el doc.get... dentro de la funcion, no sale
+}
 
-//let arraynuevo = numeros.slice(0,2);
-//console.log(arraynuevo);
-//console.log(numeros);
+//tarea: crear el boton de unshift y shift saab o volvo
 
-//let edades=[11,20,8,13,5,10];
-//let rango = edades.slice(2,4); //(-2,-1)
-//console.log(rango);
-//console.log(redades);
+let b2 = document.getElementById("btn-pop");
+b2.onclick = functionPop;
 
-//let edades=[11,20,8,13,5,10];
-//edades.splice(4,2,15,20);
-//console.log(edades);
+function functionPop() {
+    if (autos.length > 0) {
+        autos.pop();
+        text = "";
+        for (let i = 0; i < autos.length; i++) {
+            text += '<img src="assets/img/'+ autos[i] +'.png" width="100"></img>';
+        }
+        document.getElementById("demo").innerHTML=text;
+    } else {
+        console.log("no puede eliminar más valores porque el arreglo esta vacio");
+    }
+}
 
-/*let array1=[2,4,6,8];
-let array2=[3,5,7,9];
-let array3=[5,10,15,20];
+let b3 = document.getElementById("btn-unshift");
+b3.onclick = functionUnShift;
 
-let array_concat=array1.concat(array2,array3);
-console.log(array_concat)*/
+function functionUnShift() {
+    autos.unshift("volvo");
+    text = "";
+    for (let i = 0; i < autos.length; i++) {
+        text += '<img src="assets/img/'+ autos[i] +'.png" width="100"></img>';
+    }
+    document.getElementById("demo").innerHTML=text;
+}
+
+let b4 = document.getElementById("btn-shift");
+b4.onclick = functionShift;
+
+function functionShift() {
+    if (autos.length > 0) {
+        autos.shift();
+        text = "";
+        for (let i = 0; i < autos.length; i++) {
+            text += '<img src="assets/img/'+ autos[i] +'.png" width="100"></img>';
+        }
+        document.getElementById("demo").innerHTML=text;
+    } else {
+        console.log("no puede eliminar más valores porque el arreglo esta vacio");
+    }
+}
